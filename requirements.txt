@@ -1,6 +1,4 @@
 git+https://github.com/huggingface/transformers
 Flask==3.0.3
 Werkzeug==3.0.3
-PyTorch
 TensorFlow
-Flax
