@@ -1,14 +1,16 @@
 from flask import Flask
 from transformers import pipeline
+import os
 
 app = Flask(__name__)
 
-
-whisper = pipeline('automatic-speech-recognition', model = 'openai/whisper-medium', device=0)
-
 @app.route("/")
 def homepage():
-    text = whisper('pandora.mp3')
+    whisper = pipeline('automatic-speech-recognition', model = 'openai/whisper-medium', device=0)
+    filename = "pandora.mp3"
+    appRoot = os.path.dirname(os.path.abspath(__file__))
+    filePath = os.path.join(appRoot, 'static', filename)
+    text = whisper(filePath)
     return text
 
 if __name__=="__main__":

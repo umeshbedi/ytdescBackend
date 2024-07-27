@@ -1,4 +1,8 @@
-git+https://github.com/huggingface/transformers
+transformers==4.43.3
 Flask==3.0.3
 Werkzeug==3.0.3
-TensorFlow
+tensorflow==2.15.0
+tf-keras==2.15.0
+torch==2.3.1+cu121
+ffmpeg
+ffmpeg-python
