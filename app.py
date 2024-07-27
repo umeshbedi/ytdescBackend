@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def homepage():
-    whisper = pipeline('automatic-speech-recognition', model = 'openai/whisper-medium', device=0)
+    whisper = pipeline('automatic-speech-recognition', model = 'openai/whisper-medium')
     filename = "pandora.mp3"
     appRoot = os.path.dirname(os.path.abspath(__file__))
     filePath = os.path.join(appRoot, 'static', filename)
