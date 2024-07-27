@@ -3,10 +3,11 @@ from transformers import pipeline
 
 app = Flask(__name__)
 
-whisper = pipeline('automatic-speech-recognition', model = 'openai/whisper-medium', device=0)
+
 
 @app.route("/")
 def homepage():
+    whisper = pipeline('automatic-speech-recognition', model = 'openai/whisper-medium', device=0)
     text = whisper('pandora.mp3')
     return text
 
